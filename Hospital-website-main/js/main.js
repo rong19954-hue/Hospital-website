@@ -1,27 +1,18 @@
-// 主JavaScript逻辑
 document.addEventListener('DOMContentLoaded', function() {
-  // 渲染顶部信息栏
+  // 渲染
   renderTopBar();
-  // 渲染导航栏
   renderNavbar();
-  // 渲染英雄区域
-  renderHeroSection();
-  // 渲染快速操作
+  renderHeroSection()
   renderQuickActions();
-  // 渲染科室
   renderDepartments();
-  // 渲染国际医疗部分
   renderInternationalSection();
-  // 渲染医生团队
   renderFeaturedDoctors();
-  // 渲染页脚
   renderFooter();
   
   // 绑定事件
   bindEvents();
 });
 
-// 根据当前页面层级生成正确链接，避免子页面出现 pages/pages/... 路径。
 function pageUrl(fileName) {
   const inPagesDirectory = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
   return inPagesDirectory ? fileName : `pages/${fileName}`;
