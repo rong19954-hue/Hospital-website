@@ -124,7 +124,3 @@ Hospital-website-main/
 - Google Chrome
 - Firefox
 - Safari
-
-## 项目声明
-
-本项目用于学习和演示。页面中的医院名称、医生信息、联系方式、认证信息、合作机构和统计数据均应在正式发布前替换为真实且经过授权的内容。
