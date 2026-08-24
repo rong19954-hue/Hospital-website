@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>预约挂号 - 国际医疗中心</title>
+  
+  <!-- Font Awesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- 本地样式文件 -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/pages/appointment.css">
+  <link rel="stylesheet" href="../css/modern.css">
+</head>
+<body>
+  <!-- 顶部信息栏 -->
+  <div id="topBar"></div>
+
+  <!-- 主导航 -->
+  <nav id="mainNav"></nav>
+  
+  <!-- 面包屑导航 -->
+  <div class="breadcrumb">
+    <a href="../index.html">首页</a>
+    <span>/</span>
+    <span>预约挂号</span>
+  </div>
+  
+  <!-- 预约内容 -->
+  <div class="appointment-page">
+    <div class="section-title">
+      <i class="fas fa-calendar-check"></i> 预约挂号
+    </div>
+    <p class="section-subtitle">在线预约，免排队，优先就诊</p>
+    
+    <div class="appointment-container">
+      <!-- 预约表单 -->
+      <div class="appointment-form-section">
+        <h3><i class="fas fa-clipboard-list"></i> 填写预约信息</h3>
+        <div id="messageContainer"></div>
+        <form id="appointmentForm">
+          <div class="form-group">
+            <label class="form-label" for="patientName">患者姓名 *</label>
+            <input type="text" id="patientName" class="form-input" required placeholder="请输入患者姓名">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="patientPhone">联系电话 *</label>
+            <input type="tel" id="patientPhone" class="form-input" required placeholder="请输入联系电话">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="departmentSelect">选择科室*</label>
+            <select id="departmentSelect" class="form-select">
+              <option value="">请选择科室</option>
+              <option value="儿科">儿科</option>
+              <option value="眼科">眼科</option>
+              <option value="口腔科">口腔科</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="doctorSelect">选择医生（可选）</label>
+            <select id="doctorSelect" class="form-select">
+              <option value="">请选择医生</option>
+              <option value="Dr. 张医生" data-department="儿科">Dr. 张医生 - 儿科</option>
+              <option value="Dr. 王医生" data-department="眼科">Dr. 王医生 - 眼科</option>
+              <option value="Dr. 黄医生" data-department="口腔科">Dr. 黄医生 - 口腔科</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="appointmentDate">预约日期 *</label>
+            <input type="date" id="appointmentDate" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="appointmentTime">预约时间 *</label>
+            <select id="appointmentTime" class="form-select" required>
+              <option value="">请选择时间</option>
+              <option value="08:00-09:00">08:00-09:00</option>
+              <option value="09:00-10:00">09:00-10:00</option>
+              <option value="10:00-11:00">10:00-11:00</option>
+              <option value="11:00-12:00">11:00-12:00</option>
+              <option value="14:00-15:00">14:00-15:00</option>
+              <option value="15:00-16:00">15:00-16:00</option>
+              <option value="16:00-17:00">16:00-17:00</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="notes">备注信息</label>
+            <textarea id="notes" class="form-textarea" placeholder="请描述您的症状或特殊需求（选填）"></textarea>
+          </div>
+          
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fas fa-check-circle"></i> 提交预约
+          </button>
+        </form>
+      </div>
+      
+      <!-- 预约信息 -->
+      <div class="appointment-info-section">
+        <div class="info-card">
+          <h4><i class="fas fa-info-circle"></i> 预约须知</h4>
+          <ul>
+            <li><i class="fas fa-check"></i> 请提前15分钟到达医院</li>
+            <li><i class="fas fa-check"></i> 携带身份证和医保卡</li>
+            <li><i class="fas fa-check"></i> 如需取消，请提前24小时</li>
+            <li><i class="fas fa-check"></i> 国际患者请携带护照</li>
+          </ul>
+        </div>
+        
+        <div class="info-card">
+          <h4><i class="fas fa-clock"></i> 门诊时间</h4>
+          <ul>
+            <li><i class="fas fa-calendar-day"></i> 周一至周五：08:00-17:00</li>
+            <li><i class="fas fa-calendar-day"></i> 周六：08:00-12:00</li>
+            <li><i class="fas fa-calendar-day"></i> 周日：休息</li>
+            <li><i class="fas fa-ambulance"></i> 急诊：24小时</li>
+          </ul>
+        </div>
+        
+        <div class="info-card">
+          <h4><i class="fas fa-phone"></i> 联系我们</h4>
+          <ul>
+            <li><i class="fas fa-envelope"></i> 邮箱：intl@renai-medical.com</li>
+            <li><i class="fas fa-globe"></i> 国际预约：+86 577 8888 9999</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 页脚 -->
+  <footer id="mainFooter"></footer>
+
+  <!-- JavaScript 文件 -->
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/appointment.js"></script>
+</body>
+</html>

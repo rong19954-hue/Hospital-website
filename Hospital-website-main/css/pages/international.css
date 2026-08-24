@@ -1,0 +1,161 @@
+/* 国际医疗页面专用样式 */
+
+.international-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.international-hero {
+  background: linear-gradient(135deg, #0b3b5c 0%, #0e7490 50%, #155e75 100%);
+  padding: 80px 24px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.international-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.international-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.international-hero p {
+  font-size: 1.2rem;
+  color: #bae6fd;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.international-services {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-slow);
+  cursor: pointer;
+  border: 1px solid #f1f5f9;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-light);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-blue-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-size: 24px;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.service-card p {
+  color: var(--text-medium);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.partner-section {
+  background: #f8fafc;
+  padding: 60px 24px;
+}
+
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.partner-logo {
+  background: white;
+  padding: 20px 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+  color: var(--text-medium);
+  text-align: center;
+  min-width: 150px;
+  transition: var(--transition);
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.partner-logo i {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .international-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .partner-logos {
+    gap: 20px;
+  }
+  
+  .partner-logo {
+    min-width: 120px;
+    padding: 15px 20px;
+  }
+}

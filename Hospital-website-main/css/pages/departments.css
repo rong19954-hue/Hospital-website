@@ -1,0 +1,126 @@
+/* 科室页面专用样式 */
+
+.department-detail {
+  padding: 40px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dept-category {
+  margin-bottom: 50px;
+}
+
+.dept-category h3 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.dept-grid-large {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.dept-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid #f1f5f9;
+  transition: var(--transition-slow);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.dept-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.dept-card:hover::before {
+  transform: scaleX(1);
+}
+
+.dept-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-light);
+}
+
+.dept-card i {
+  font-size: 40px;
+  color: #0369a1;
+  margin-bottom: 16px;
+}
+
+.dept-card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.dept-card p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.dept-info {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-medium);
+}
+
+.dept-info span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dept-info i {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: var(--primary-color);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .dept-grid-large {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  
+  .dept-card {
+    padding: 24px 16px;
+  }
+  
+  .dept-card i {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dept-grid-large {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .dept-category h3 {
+    font-size: 1.2rem;
+  }
+}  

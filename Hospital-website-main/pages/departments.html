@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>科室导航 - 国际医疗中心</title>
+  
+  <!-- Font Awesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- 本地样式文件 -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/pages/departments.css">
+  <link rel="stylesheet" href="../css/modern.css">
+</head>
+<body>
+  <!-- 顶部信息栏 -->
+  <div id="topBar"></div>
+
+  <!-- 主导航 -->
+  <nav id="mainNav"></nav>
+  
+  <!-- 面包屑导航 -->
+  <div class="breadcrumb">
+    <a href="../index.html">首页</a>
+    <span>/</span>
+    <span>科室导航</span>
+  </div>
+  
+  <!-- 科室内容 -->
+  <div class="department-detail">
+    <div class="section-title">
+      <i class="fas fa-stethoscope"></i> 特色科室
+    </div>
+    <p class="section-subtitle">多学科联合诊疗 · 国际标准 · 权威专家团队</p>
+    
+    <!-- 内科系统 -->
+    <div class="dept-category">
+      <h3><i class="fas fa-heartbeat"></i> 内科系统</h3>
+      <div class="dept-grid-large" id="internalMedicine"></div>
+    </div>
+    
+    <!-- 外科系统 -->
+    <div class="dept-category">
+      <h3><i class="fas fa-procedures"></i> 外科系统</h3>
+      <div class="dept-grid-large" id="surgery"></div>
+    </div>
+    
+    <!-- 专科中心 -->
+    <div class="dept-category">
+      <h3><i class="fas fa-star"></i> 专科中心</h3>
+      <div class="dept-grid-large" id="specialCenters"></div>
+    </div>
+  </div>
+  
+  <!-- 页脚 -->
+  <footer id="mainFooter"></footer>
+
+  <!-- JavaScript 文件 -->
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pages/departments.js"></script>
+</body>
+</html>

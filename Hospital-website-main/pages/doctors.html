@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>医生团队 - 国际医疗中心</title>
+  
+  <!-- Font Awesome 图标库 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- 本地样式文件 -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/pages/doctors.css">
+  <link rel="stylesheet" href="../css/modern.css">
+</head>
+<body>
+  <!-- 顶部信息栏 -->
+  <div id="topBar"></div>
+
+  <!-- 主导航 -->
+  <nav id="mainNav"></nav>
+  
+  <!-- 面包屑导航 -->
+  <div class="breadcrumb">
+    <a href="../index.html">首页</a>
+    <span>/</span>
+    <span>专家团队</span>
+  </div>
+  
+  <!-- 医生团队内容 -->
+  <div class="doctors-page">
+    <div class="section-title">
+      <i class="fas fa-users"></i> 国际专家团队
+    </div>
+    <p class="section-subtitle">汇聚全球顶尖医学人才，提供国际一流诊疗服务</p>
+    
+    <!-- 筛选栏 -->
+    <div class="filter-bar">
+      <button class="filter-btn active" aria-pressed="true" onclick="filterDoctorDirectory('all', this)">全部专家</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctorDirectory('儿科', this)">儿科</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctorDirectory('眼科', this)">眼科</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctorDirectory('口腔科', this)">口腔科</button>
+    </div>
+    
+    <!-- 医生列表 -->
+    <div class="doctors-grid" id="doctorsGrid"></div>
+  </div>
+  
+  <!-- 页脚 -->
+  <footer id="mainFooter"></footer>
+
+  <!-- JavaScript 文件 -->
+  <script src="../js/data.js?v=20260824-3"></script>
+  <script src="../js/main.js?v=20260824-3"></script>
+  <script src="../js/pages/doctors.js?v=20260824-3"></script>
+</body>
+</html>

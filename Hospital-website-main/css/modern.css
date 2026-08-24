@@ -1,0 +1,176 @@
+/* 现代视觉与体验增强层：在原有样式之后加载 */
+:root {
+  --primary-color: #087f8c;
+  --primary-dark: #075f6b;
+  --primary-light: #67d4d8;
+  --secondary-color: #092f45;
+  --bg-light: #f7fafc;
+  --shadow-sm: 0 2px 12px rgba(9, 47, 69, .05);
+  --shadow-md: 0 12px 34px rgba(9, 47, 69, .08);
+  --shadow-lg: 0 22px 50px -12px rgba(8, 127, 140, .20);
+  --shadow-xl: 0 28px 60px -14px rgba(8, 127, 140, .25);
+}
+
+body { background: #fff; }
+button, input, select, textarea { font: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(8, 127, 140, .28);
+  outline-offset: 3px;
+}
+
+.top-bar {
+  min-height: 38px;
+  padding: 7px max(24px, calc((100vw - 1220px) / 2));
+  background: #092f45;
+}
+.top-bar > div { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.top-bar a { margin-left: 8px; }
+
+#mainNav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: block;
+  border-bottom: 1px solid rgba(226, 232, 240, .85);
+  background: rgba(255, 255, 255, .92);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(16px);
+}
+.navbar {
+  min-height: 82px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 30px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.logo-area { color: inherit; text-decoration: none; }
+.logo-icon {
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--primary-color), #0ea5a8);
+  box-shadow: 0 9px 20px rgba(8,127,140,.18);
+}
+.logo-subtitle { display: block; margin-top: 1px; color: #94a3b8; font-size: .56rem; font-weight: 700; letter-spacing: .14em; }
+.nav-links { gap: 7px; }
+.nav-links a { padding: 9px 12px; border-radius: 999px; font-size: .94rem; }
+.nav-links a:hover { background: #edfafa; }
+.nav-links a.active { color: var(--primary-dark); background: #e2f5f5; font-weight: 700; }
+.mobile-menu-btn { display: none; width: 44px; height: 44px; color: var(--secondary-color); border: 0; border-radius: 12px; background: #edfafa; cursor: pointer; font-size: 1.2rem; }
+
+.btn-primary {
+  min-height: 44px;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), #0796a0);
+  box-shadow: 0 10px 24px rgba(8,127,140,.18);
+}
+.btn-primary:hover { box-shadow: 0 14px 28px rgba(8,127,140,.25); transform: translateY(-2px); }
+.btn-outline { min-height: 44px; justify-content: center; background: rgba(255,255,255,.58); }
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  padding: 72px 24px 92px;
+  background: radial-gradient(circle at 75% 15%, rgba(103,212,216,.30), transparent 28%), linear-gradient(135deg, #f3fbfb 0%, #e7f7f8 50%, #edf7ff 100%);
+}
+.hero-section::before {
+  position: absolute;
+  right: -120px;
+  bottom: -180px;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(8,127,140,.12);
+  border-radius: 50%;
+  content: "";
+  box-shadow: 0 0 0 70px rgba(255,255,255,.22), 0 0 0 140px rgba(255,255,255,.12);
+}
+.hero-content { position: relative; z-index: 1; max-width: 650px; }
+.hero-content h1 { color: #092f45; font-size: clamp(2.75rem, 5vw, 4.6rem); font-weight: 800; line-height: 1.08; letter-spacing: -.055em; }
+.hero-content h1 span { color: var(--primary-color); }
+.hero-content p { max-width: 620px; color: #42586b; line-height: 1.8; }
+.hero-highlight { border: 1px solid rgba(8,127,140,.15); background: rgba(255,255,255,.72); box-shadow: 0 5px 18px rgba(9,47,69,.05); }
+.hero-image { position: relative; z-index: 1; min-width: 330px; border: 1px solid rgba(255,255,255,.9); box-shadow: 0 28px 70px -20px rgba(9,47,69,.28); }
+
+.quick-actions { max-width: 1180px; margin: -45px auto 0; border-radius: 28px; box-shadow: 0 18px 45px rgba(9,47,69,.08); }
+.action-card { width: 190px; color: inherit; border-color: #e8f0f3; cursor: pointer; }
+.action-card:hover { background: linear-gradient(180deg, #fff, #f4fbfb); }
+.department-section, .doctors-section { padding-top: 88px; padding-bottom: 88px; }
+.dept-item { width: 170px; color: inherit; cursor: pointer; }
+.section-title { letter-spacing: -.02em; }
+
+.international-section { padding-top: 84px; padding-bottom: 84px; background: radial-gradient(circle at 80% 20%, rgba(103,212,216,.18), transparent 30%), linear-gradient(135deg, #092f45, #0a4558); }
+.global-stat { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.09); }
+.doctor-card, .dept-card, .doctor-profile-card, .service-card, .appointment-form-section, .info-card { border-color: #e8f0f3; box-shadow: var(--shadow-md); }
+.doctor-card { width: 260px; }
+
+.breadcrumb { background: linear-gradient(90deg, #f8fafc, #eefafa); }
+.department-detail, .doctors-page, .appointment-page { padding-top: 56px; padding-bottom: 80px; }
+.dept-card, .doctor-profile-card, .service-card { border-radius: 22px; }
+.doctor-header { background: linear-gradient(145deg, #092f45, #087f8c); }
+.filter-bar { padding: 8px; border-radius: 18px; background: #f1f7f8; }
+.filter-btn { border-color: transparent; background: transparent; }
+.filter-btn.active { box-shadow: 0 8px 18px rgba(8,127,140,.18); }
+.appointment-form-section { border: 1px solid #e8f0f3; }
+.form-input, .form-select, .form-textarea { min-height: 46px; border-radius: 11px; background: #fbfdfe; }
+.form-textarea { min-height: 110px; }
+.info-card { border: 1px solid #e8f0f3; border-left: 4px solid var(--primary-color); }
+.international-hero { padding-top: 100px; padding-bottom: 100px; background: radial-gradient(circle at 20% 20%, rgba(103,212,216,.25), transparent 28%), linear-gradient(135deg, #092f45, #087f8c); }
+.partner-section { background: #f4f9fa; }
+.partner-logo { border: 1px solid #e7eff1; box-shadow: var(--shadow-md); }
+
+.footer { margin-top: 0; padding: 64px 24px 24px; background: #071d2c; }
+.footer-col span { display: block; color: #94a3b8; font-size: .9rem; }
+.toast { right: 26px; bottom: 26px; padding: 14px 19px; border-radius: 12px; background: #092f45; box-shadow: 0 18px 45px rgba(9,47,69,.28); }
+
+@media (max-width: 900px) {
+  .navbar { position: relative; }
+  .mobile-menu-btn { display: inline-grid; place-items: center; }
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 18px;
+    left: 18px;
+    display: none;
+    align-items: stretch;
+    gap: 5px;
+    padding: 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: rgba(255,255,255,.98);
+    box-shadow: 0 24px 60px rgba(9,47,69,.16);
+  }
+  .nav-links.open { display: flex; flex-direction: column; }
+  .nav-links a { justify-content: flex-start; padding: 12px 14px; }
+  .nav-links .btn-primary { width: 100%; margin-top: 6px; }
+  .hero-section { min-height: auto; }
+}
+
+@media (max-width: 768px) {
+  .top-bar > div:last-child { display: none; }
+  .navbar { min-height: 72px; padding: 11px 18px; flex-direction: row; align-items: center; }
+  .logo-icon { width: 42px; height: 42px; }
+  .logo-text { font-size: 1.35rem; }
+  .hero-section { padding: 58px 18px 82px; }
+  .hero-image { width: min(100%, 430px); min-width: 0; }
+  .quick-actions { margin: -28px 14px 0; padding: 25px 14px; border-radius: 22px; }
+  .action-card { width: calc(50% - 12px); }
+  .department-section, .doctors-section { padding-top: 68px; padding-bottom: 68px; }
+  .international-section { padding-top: 68px; padding-bottom: 68px; }
+}
+
+@media (max-width: 480px) {
+  .top-bar { justify-content: center; padding-inline: 12px; font-size: .76rem; }
+  .top-bar a[href^="mailto"] { display: none; }
+  .logo-subtitle { display: none; }
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content p { font-size: 1.02rem; }
+  .action-card { min-width: 0; }
+  .dept-item { width: calc(50% - 10px); min-width: 0; }
+  .filter-bar { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .filter-btn { flex: 0 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
