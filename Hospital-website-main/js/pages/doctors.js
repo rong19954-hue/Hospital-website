@@ -174,8 +174,10 @@ function filterDoctors(category, btn) {
   // 更新按钮状态
   document.querySelectorAll('.filter-btn').forEach(button => {
     button.classList.remove('active');
+    button.setAttribute('aria-pressed', 'false');
   });
   btn.classList.add('active');
+  btn.setAttribute('aria-pressed', 'true');
   
   // 筛选医生
   let filteredDoctors;

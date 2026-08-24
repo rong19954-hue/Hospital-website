@@ -1,18 +1,27 @@
+// 主JavaScript逻辑
 document.addEventListener('DOMContentLoaded', function() {
-  // 渲染
+  // 渲染顶部信息栏
   renderTopBar();
+  // 渲染导航栏
   renderNavbar();
-  renderHeroSection()
+  // 渲染英雄区域
+  renderHeroSection();
+  // 渲染快速操作
   renderQuickActions();
+  // 渲染科室
   renderDepartments();
+  // 渲染国际医疗部分
   renderInternationalSection();
+  // 渲染医生团队
   renderFeaturedDoctors();
+  // 渲染页脚
   renderFooter();
   
   // 绑定事件
   bindEvents();
 });
 
+// 根据当前页面层级生成正确链接，避免子页面出现 pages/pages/... 路径。
 function pageUrl(fileName) {
   const inPagesDirectory = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
   return inPagesDirectory ? fileName : `pages/${fileName}`;
@@ -158,15 +167,20 @@ function renderDepartments() {
     <button type="button" class="dept-item" onclick="viewDepartment('${dept.name}')">
       <i class="${dept.icon}"></i>
       <span>${dept.name}</span>
+      <small>查看科室详情</small>
     </button>
   `).join('');
   
   deptSection.innerHTML = `
     <div class="department-section">
-      <h2 class="section-title">
-        <i class="fas fa-chevron-circle-right" style="color: #0e7490;"></i> 特色科室
-      </h2>
-      <p class="section-subtitle">多学科联合诊疗 · 国际标准</p>
+      <div class="home-section-heading">
+        <div>
+          <span class="section-kicker">SPECIALIZED CARE</span>
+          <h2 class="section-title"><i class="fas fa-stethoscope"></i> 特色科室</h2>
+          <p class="section-subtitle">多学科联合诊疗，为不同健康需求提供专业方案</p>
+        </div>
+        <a class="section-more" href="${pageUrl('departments.html')}">查看全部科室 <i class="fas fa-arrow-right"></i></a>
+      </div>
       <div class="dept-grid">${departments}</div>
     </div>
   `;
@@ -218,13 +232,20 @@ function renderFeaturedDoctors() {
       <h4>${doctor.name}</h4>
       <p>${doctor.specialty} · ${doctor.country}</p>
       <span class="badge">${doctor.status}</span>
+      <a class="doctor-book-link" href="${pageUrl('appointment.html')}?doctor=${encodeURIComponent(doctor.name)}">预约医生 <i class="fas fa-arrow-right"></i></a>
     </div>
   `).join('');
   
   doctorsSection.innerHTML = `
     <div class="doctors-section">
-      <h2 class="section-title"><i class="fas fa-users"></i> 国际专家团队</h2>
-      <p class="section-subtitle">来自全球顶尖医学院的主任医师</p>
+      <div class="home-section-heading">
+        <div>
+          <span class="section-kicker">MEDICAL EXPERTS</span>
+          <h2 class="section-title"><i class="fas fa-user-doctor"></i> 专家团队</h2>
+          <p class="section-subtitle">经验丰富的专业医生，为患者提供个性化诊疗服务</p>
+        </div>
+        <a class="section-more" href="${pageUrl('doctors.html')}">查看全部专家 <i class="fas fa-arrow-right"></i></a>
+      </div>
       <div class="doctor-cards">${doctors}</div>
     </div>
   `;

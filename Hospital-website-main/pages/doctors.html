@@ -38,10 +38,12 @@
     
     <!-- 筛选栏 -->
     <div class="filter-bar">
-      <button class="filter-btn active" aria-pressed="true" onclick="filterDoctorDirectory('all', this)">全部专家</button>
-      <button class="filter-btn" aria-pressed="false" onclick="filterDoctorDirectory('儿科', this)">儿科</button>
-      <button class="filter-btn" aria-pressed="false" onclick="filterDoctorDirectory('眼科', this)">眼科</button>
-      <button class="filter-btn" aria-pressed="false" onclick="filterDoctorDirectory('口腔科', this)">口腔科</button>
+      <button class="filter-btn active" aria-pressed="true" onclick="filterDoctors('all', this)">全部专家</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctors('internal', this)">内科</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctors('surgery', this)">外科</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctors('pediatrics', this)">儿科</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctors('obgyn', this)">妇产科</button>
+      <button class="filter-btn" aria-pressed="false" onclick="filterDoctors('oncology', this)">肿瘤科</button>
     </div>
     
     <!-- 医生列表 -->
@@ -52,8 +54,8 @@
   <footer id="mainFooter"></footer>
 
   <!-- JavaScript 文件 -->
-  <script src="../js/data.js?v=20260824-3"></script>
-  <script src="../js/main.js?v=20260824-3"></script>
-  <script src="../js/pages/doctors.js?v=20260824-3"></script>
+  <script src="../js/data.js?v=20260824-4"></script>
+  <script src="../js/main.js?v=20260824-4"></script>
+  <script src="../js/pages/doctors.js?v=20260824-4"></script>
 </body>
 </html>

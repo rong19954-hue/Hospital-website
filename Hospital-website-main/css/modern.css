@@ -99,6 +99,17 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .dept-item { width: 170px; color: inherit; cursor: pointer; }
 .section-title { letter-spacing: -.02em; }
 
+.home-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 36px; }
+.home-section-heading .section-title { margin-bottom: 8px; }
+.home-section-heading .section-subtitle { margin-bottom: 0; }
+.section-kicker { display: block; margin-bottom: 9px; color: var(--primary-color); font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
+.section-more { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; padding: 10px 16px; color: var(--primary-dark); border: 1px solid #cfe7e9; border-radius: 999px; background: white; font-size: .88rem; font-weight: 700; text-decoration: none; transition: .2s; }
+.section-more:hover { border-color: var(--primary-light); background: #edfafa; transform: translateY(-2px); }
+.dept-item small { display: block; margin-top: 7px; color: #94a3b8; font-size: .72rem; }
+.doctor-card { display: flex; flex-direction: column; align-items: center; }
+.doctor-book-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 17px; color: var(--primary-color); font-size: .84rem; font-weight: 700; text-decoration: none; }
+.doctor-book-link:hover { color: var(--primary-dark); }
+
 .international-section { padding-top: 84px; padding-bottom: 84px; background: radial-gradient(circle at 80% 20%, rgba(103,212,216,.18), transparent 30%), linear-gradient(135deg, #092f45, #0a4558); }
 .global-stat { border: 1px solid rgba(255,255,255,.13); background: rgba(255,255,255,.09); }
 .doctor-card, .dept-card, .doctor-profile-card, .service-card, .appointment-form-section, .info-card { border-color: #e8f0f3; box-shadow: var(--shadow-md); }
@@ -157,6 +168,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .action-card { width: calc(50% - 12px); }
   .department-section, .doctors-section { padding-top: 68px; padding-bottom: 68px; }
   .international-section { padding-top: 68px; padding-bottom: 68px; }
+  .home-section-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
 }
 
 @media (max-width: 480px) {
