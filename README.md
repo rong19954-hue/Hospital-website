@@ -72,31 +72,14 @@ Hospital-website-main/
 
 编辑 `js/data.js` 中的 `HOSPITAL_DATA.info`：
 
-```javascript
-info: {
-  name: "仁爱国际医疗中心",
-  phone: "400-888-9999",
-  email: "intl@renai-medical.com",
-  address: "浙江省温州市瓯海区",
-  emergencyPhone: "+86 577 8888 9999"
-}
-```
-
 ### 首页医生数据
 
 编辑 `js/data.js` 中的 `HOSPITAL_DATA.doctors`。
 
 ### 医生筛选数据
 
-编辑 `js/pages/doctors.js` 中的 `extendedDoctors`。医生的 `specialty` 和 `category` 应保持一致，例如：
+编辑 `js/pages/doctors.js` 中的 `extendedDoctors`。
 
-```javascript
-{
-  name: "Dr. 张医生",
-  specialty: "儿科",
-  category: "儿科"
-}
-```
 
 新增医生后，还需要在 `pages/appointment.html` 的医生下拉选项中添加对应医生，并使用 `data-department` 标明所属科室：
 
